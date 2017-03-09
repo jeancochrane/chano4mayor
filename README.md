@@ -1,2 +1,4 @@
 # chano4mayor
-🏆 Chance the Rapper for Mayor of Chicago.
+
+> They're screaming "Chano for Mayor," I'm thinking maybe I should.
+> \- *Somewhere in Paradise* (2015)
