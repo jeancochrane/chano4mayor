@@ -8,13 +8,12 @@ $(function() {
     });
     
     function addCountToDom(data) {
-        var parsed = data.split("|");
-        var count = parsed[0];
-        var date = parsed[1];
-        
+        var count = data.split("|")[0];
+        $("#count").html(count);
     }
 
     function onError() {
         //Hide the count element, replace with something else?
+        $(".tweetcount").hide();
     }
 });
