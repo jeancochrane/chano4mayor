@@ -1,0 +1,29 @@
+{
+  "name": "chano4mayor",
+  "version": "1.0.0",
+  "description": "> They're screaming \"Chano for Mayor,\" I'm thinking maybe I should. > \\- *Somewhere in Paradise* (2015)",
+  "main": "Gruntfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jeancochrane/chano4mayor.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jeancochrane/chano4mayor/issues"
+  },
+  "homepage": "https://github.com/jeancochrane/chano4mayor#readme",
+  "devDependencies": {
+    "autoprefixer": "^6.7.6",
+    "cssnano": "^3.10.0",
+    "grunt": "^1.0.1",
+    "grunt-contrib-sass": "^1.0.0",
+    "grunt-contrib-uglify": "^2.2.0",
+    "grunt-contrib-watch": "^1.0.0",
+    "grunt-postcss": "^0.8.0",
+    "load-grunt-tasks": "^3.5.2"
+  }
+}
