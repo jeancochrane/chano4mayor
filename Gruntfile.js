@@ -15,7 +15,7 @@ module.exports = function(grunt) {
             },
 
             css: {
-                files: 'styles.css',
+                files: 'styles.min.css',
                 options: {
                     livereload: true
                 }
@@ -61,7 +61,7 @@ module.exports = function(grunt) {
                     ]
                 },
                 src: 'src/scss/styles-unprefixed.css',
-                dest: 'styles.css'
+                dest: 'styles.min.css'
             }
         },
 
