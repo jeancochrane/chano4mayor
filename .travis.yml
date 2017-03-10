@@ -1,10 +1,6 @@
-language: generic
-
-addons:
-    # Prevent SSH interactivity
-    ssh_known_hosts: $HOST
-
 before_deploy:
+    # Prevent SSH interactivity
+    - ssh-keyscan -t $TRAVIS_SSH_KEY_TYPES -H \$HOST 2>&1 | tee -a $HOME/.ssh/known_hosts
     # Decrypt SSH keys and add the remote repo
     - openssl aes-256-cbc -K $encrypted_6d3ebf5b20a9_key -iv $encrypted_6d3ebf5b20a9_iv
         -in git_user.enc -out /tmp/git_user -d
@@ -15,7 +11,6 @@ before_deploy:
 
 deploy:
     provider: script
-    skip_cleanup: true
     script: git push production master
     on:
         all_branches: true
