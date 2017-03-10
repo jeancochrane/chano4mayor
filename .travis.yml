@@ -16,16 +16,13 @@ before_deploy: |
     eval "$(ssh-agent -s)";
     chmod 600 /tmp/git_user;
     ssh-add /tmp/git_user;
-    git fetch --all --unshallow --tags;
-    git branch -a;
-    git checkout master || git checkout -b master;
-    git pull origin master;
+    git checkout -b master;
     git remote add production git@$HOST:$PROJ_PATH;
 
 deploy:
     provider: script
     skip_cleanup: true
-    script: git push production master
+    script: git push production master --quiet
     on:
         all_branches: true
         tags: true
