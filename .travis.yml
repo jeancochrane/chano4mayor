@@ -18,7 +18,7 @@ before_deploy:
     - ssh-add /tmp/git_user
     - git config user.name "Travis CI"
     - git config user.email "$COMMIT_AUTHOR_EMAIL"
-    - git add .
+    - git add "."
     - git commit -m "Travis build: $TRAVIS_BUILD_NUMBER"
     - git remote add production git@$HOST:$PROJ_PATH
 
