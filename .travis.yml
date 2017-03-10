@@ -6,7 +6,7 @@ addons:
 install: true
 
 before_script:
-    - echo -e "Host chano4mayor.com\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
+    - echo -e "Host *\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
 
 script:
     - ssh-keyscan -t $TRAVIS_SSH_KEY_TYPES -H \$HOST 2>&1 | tee -a $HOME/.ssh/known_hosts
