@@ -93,3 +93,24 @@ p.center {
     flex-flow: row wrap;
     padding-top: 100px;
 }
+
+footer {
+    padding: 1em;
+    text-align: center;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    background-color: rgb(255, 198, 192);
+    color: #333;
+    font-size: .8em;
+
+    p {
+        flex: 1 100%;
+        max-width: none;
+        margin: 0;
+        
+        &:first-child {
+            margin-bottom: 5px;
+        }
+    }
+}
