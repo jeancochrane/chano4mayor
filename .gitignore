@@ -93,4 +93,5 @@ node_modules
 
 # SASS
 .sass-cache
-**/*.maptweetcount
+**/*.map
+tweetcount
