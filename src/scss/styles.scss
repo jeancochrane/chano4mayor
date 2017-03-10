@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:900,900i');
+
+html {
+    font-family: 'Lato', sans-serif;
+    box-sizing: border-box;
+    font-size: 20px;
+}
+
+h1 {
+    font-size: 2em;
+}
+
+h2 {
+    font-size: 1.4em;
+}
+
+body {
+    margin: 0;
+    color: white;
+}
+
+main {
+}
+
+.section {
+    min-height: 800px;
+    padding: 2em;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.section-red {
+    background: url('images/sparkles.png'), linear-gradient(to bottom, rgba(255,127,125,1) 0%, rgba(254,64,80,1) 100%);
+}
+
+.section-blue {
+    background: url('images/sparkles.png'), linear-gradient(to bottom, rgba(91,61,87,1) 0%, rgba(76,101,227,1) 100%);
+}
+
+.blue {
+    color: rgb(0,69,145);
+}
+
+.hashtag {
+    font-size: 3em;
+}
+
+.lyric {
+    margin: 16px;
+}
+
+.lyric-source {
+    font-style: italic;
+    font-size: .9em;
+}
+
+#count {
+    font-size: 4em;
+    flex: 1 100%;
+    margin: 0;
+    text-align: center;
+}
+
+.tweetcount {
+    height: 500px;
+    width: 500px;
+    background: url('images/ChanoHat.svg') no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-content: flex-start;
+    flex-flow: row wrap;
+    padding-top: 100px;
+}
