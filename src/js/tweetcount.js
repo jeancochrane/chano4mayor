@@ -8,8 +8,12 @@ $(function() {
     });
     
     function addCountToDom(data) {
-        var count = data.split("|")[0];
-        $("#count").html(count);
+        var count = Number(data.split("|")[0]).toLocaleString();
+        if (count) {
+            $("#count").html(count);
+        } else {
+            onError();
+        }
     }
 
     function onError() {
