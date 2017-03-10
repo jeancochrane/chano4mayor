@@ -3,16 +3,14 @@ language: bash
 install: true
 
 script:
-    # Prevent SSH interactivity
     - ssh-keyscan -t $TRAVIS_SSH_KEY_TYPES -H \$HOST 2>&1 | tee -a $HOME/.ssh/known_hosts
-    # Decrypt SSH keys and add the remote repo
     - openssl aes-256-cbc -K $encrypted_6d3ebf5b20a9_key -iv $encrypted_6d3ebf5b20a9_iv -in git_user.enc -out /tmp/git_user -d
 
 before_deploy:
     - eval "$(ssh-agent -s)"
     - chmod 600 /tmp/git_user
     - ssh-add /tmp/git_user
-    - git remote add production git@$HOST:$PATH
+    - git remote add production git@$HOST:$PROJ_PATH
 
 deploy:
     provider: script
@@ -21,8 +19,7 @@ deploy:
         all_branches: true
         tags: true
 
-# Encrypted vars
 env:
     global:
         - secure: UkK7mfvt3Lqov6WyPJ23+UQPvHdYLczXw4d7sra78qHWuiY7lH6rFUZ98GQyVavUJpPXbRk4Tx6y7I1xc+e3FeGjw7vByjQPo6rQ6g9jaKakYn4VSQpVimnmU3H/SjRglC7is8Rk69+1n8YzEcPwVhN98LAwtIyEf/gAGnTi1mmHkBMWCCQCjRmgVR1og2UVBcjB3xSHmB53RL9RWFAsT80TbP6VD9/BlddG1IonpXLGcspPZwIJqZYlsqU5WWCR+zaQH7z/8Sa6sbsTz3sEVaNTa6fjFme9tmFvfJiwAM5FcdH7xRtCQqaxQHa7rzO+zSl8fQb6vzdp1TxL4J2xqLDS+jMcL/ILiht/ajco9Wz17jcZXUOF5tzE96cv8AtOxNxP5aqQvBA3pRwrEHU7/xUUUY+bS5L1rOf84V6F6PWyxvcG0A+z2lRSpjcYbTh7dTrfemlA7tfi5lIlSJsR1lm9ssXi8lHnVukNze4xJw/aOGLmrfPB9r8DdfWsWF8iQzzSgWmeUPZZMZnhB9BSj6hznH4y/lHn25W7SDR8ostEou+ZLPsMgYWBSdt+uCLsPr56SxBFpVPwXRkW5Wfsq+KHaLm6l0k0jziL+f8tNfyHUab0UxCrGF9EF2OZbXTZpSfuMqv3ii+bDLzZGa4wbSpSZBm366cAlcopRydPWfI=
-        - secure: vAHWt3KXAnhBo/To/vvvK+yiU5YXRacPPMzSAR1mufFWC6agjBlT7K4lqaKIpQhSRhcOvXyaFNHthi5Br28n91IQ0qzgG9ierbPyiKGWoP5mlSBhs0MmbIa0tE/uvp1Hjkqexw1hgTxbzwACQ+1O0DNIr23g+MGsz77w8J18i3QsM+pbsr/cPjuTxY75ByAiK8IMRNOQOXEgzy56+janXW5yIvPyh2fjvDGd+v1GTF68P3uW/5+eJCM2JHb/ue0AZ2Ikrs2i/SZsyzsiEA+SZdZZagmFOFpppWHyv945WWSKBBCVwNp25oK87V6sYoRnDj5PSjtvUEkKsmO7An3A5IGJ2a7UNfVqDsznwORxLMnZ9bGcSq0fk1sAINhu5we+our3sfLlrMk/4f5RS1s+xRsG1b1dQVbmoQdUewltOafa900NuvG+24GFjLND88lngacJjPRxZ+zHDwz68M/4Td6Pq3Ki64NRrX0MeHXOvclFV7BycdO3Ru9iyAhqYy5zAIjX8hUTRm3PA2QJfXOS/VRZeOqjt4pH5VgQvUcJe8T1r9SGiCrFeKblW6Pbu2ltifQF9yVVUZXJQKwwSyY/afpSqkP8WONi5G2VCSWDZCsdTfSykD6NpJg1JXsm/TgEHCzvCalBlkoxB7BqKwUYKIT1+BCQnd2/fwkvLnIS8Tk=
+        - secure: FtNTYL0shB0J/YbNDfqm0s8lnwcTzcOuI17jDutGuWeW4cvZlkVxbitpxt9i3w3XgAMl7lY4aIzk/hmT9J8movcx2zWAeEw1BwBvrIIQjl82nD1ymj259lhXWfYFC364bEfwv4dnQOAd10+zfwFO0PdM1BWcWYtwnd5wJ2thxrC/p54pyhrGCIt2fi41SC7CJ7Hal7qadrrC1qk4SRLTA9kD58/+gH8dyi09FnIc8IhRriGkCy9BxALo74VYVzfJPdIJIsrxfxeNBUbBSG8VJgAd5N8RZSL8aZc/yJLyZ22+Lb9L7G0q5PZcAwGckHpCHaFkEwUlAjcQa2AxBksQ5jkO5LprNWKtbj41tUbSnqcqItcBP8A2JSEEyB2aO0S2z8ygohu59AuCawXW/iqK/XAoZaGApMRUwsAixHFb68J1iZM4Rzh4oQ07TDi8QnY+S+hojECq/Ho8yiKqj40AwtAY22HMNhCDSMsgmkxbVYYhegjfw8bMMmNyu9bOBT6rZSj69L+x4i2EtcnBS+Nl7iMA6lRbVytC7oHXG9UYWCXWYV2/ek/Rfr29UQYNWfekTjRP4LqMX2mW861CowH6maHwDDkZjZM9VGEO+l+f/oie11R8nErGCIL5xDT5leqZfEGSh9m3VT+pRc0CkNFnrkJ7o20HkoE8OfTeDDSHXk0=
