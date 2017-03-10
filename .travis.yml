@@ -12,15 +12,15 @@ script:
     - ssh-keyscan -t $TRAVIS_SSH_KEY_TYPES -H \$HOST 2>&1 | tee -a $HOME/.ssh/known_hosts
     - openssl aes-256-cbc -K $encrypted_6d3ebf5b20a9_key -iv $encrypted_6d3ebf5b20a9_iv -in git_user.enc -out /tmp/git_user -d
 
-before_deploy:
-    - eval "$(ssh-agent -s)"
-    - chmod 600 /tmp/git_user
-    - ssh-add /tmp/git_user
-    - git config user.name "Travis CI"
-    - git config user.email "$COMMIT_AUTHOR_EMAIL"
-    - git add "."
-    - git commit -m "Travis build: $TRAVIS_BUILD_NUMBER"
-    - git remote add production git@$HOST:$PROJ_PATH
+before_deploy: |
+    eval "$(ssh-agent -s)";
+    chmod 600 /tmp/git_user;
+    ssh-add /tmp/git_user;
+    git config user.name "Travis CI";
+    git config user.email "$COMMIT_AUTHOR_EMAIL";
+    git add ".";
+    git commit -m "Travis build: $TRAVIS_BUILD_NUMBER";
+    git remote add production git@$HOST:$PROJ_PATH;
 
 deploy:
     provider: script
