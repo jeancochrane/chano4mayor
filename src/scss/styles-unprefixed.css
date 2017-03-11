@@ -43,7 +43,8 @@ p.center {
   text-align: center; }
 
 .hashtag {
-  font-size: 3em; }
+  font-size: 3em;
+  font-weight: 900; }
 
 .lyric-container {
   color: #333;
@@ -114,6 +115,7 @@ footer {
   color: #333; }
 
 .soundcite-loaded {
-  padding: 5px; }
+  padding: 5px 15px;
+  display: inline; }
 
 /*# sourceMappingURL=styles-unprefixed.css.map */
