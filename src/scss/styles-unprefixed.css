@@ -118,4 +118,11 @@ footer {
   padding: 5px 15px;
   display: inline; }
 
+@media (max-width: 500px) {
+  html {
+    font-size: 18px; }
+
+  .section {
+    padding: 3em 2em; } }
+
 /*# sourceMappingURL=styles-unprefixed.css.map */
