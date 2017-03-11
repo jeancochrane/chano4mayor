@@ -31,7 +31,6 @@ p {
 }
 
 .section {
-    min-height: 800px;
     padding: 2em 15%;
     display: flex;
     align-items: center;
@@ -89,16 +88,21 @@ p.center {
 }
 
 .tweetcount {
-    margin-top: 4em;
-    height: 500px;
-    width: 500px;
+    margin-top: 3em;
+    margin-bottom: 2em;
+    height: 400px;
     background: url('images/chano_hat.svg') no-repeat;
+    background-position-x: 50%;
+    background-position-y: 50%;
+    position: relative;
+    left: -60px;
+    padding-left: 60px;
     display: flex;
     align-items: center;
     justify-content: center;
     align-content: flex-start;
     flex-flow: row wrap;
-    padding-top: 100px;
+    padding-top: 110px;
 }
 
 footer {
@@ -127,7 +131,8 @@ footer {
     border-width: 1px;
     border-color: #333;
     background-color: rgba(255,255,255,0.7);
-    z-index: 2;
+    width: 90%;
+    max-width: 500px;
     display: block;
     position: absolute;
     left: 50%;
@@ -143,12 +148,35 @@ footer {
     display: inline;
 }
 
+@media (max-width: 800px) {
+    .tweetcount {
+        font-size: 18px;
+        padding-top: 75px;
+        height: 300px;
+        left: -30px;
+        padding-left: 30px;
+    }
+}
+
 @media (max-width: 500px) {
     html {
-        font-size: 18px;    
+        font-size: 16px;    
     }
     
     .section {
         padding: 3em 2em;
+    }
+    
+    #count {
+        font-size: 3.5em;
+    }
+
+    .tweetcount {
+        font-size: 16px;
+        margin: 0;
+    }
+
+    .disclaimer {
+        font-size: 10px;
     }
 }
