@@ -148,6 +148,44 @@ footer {
     display: inline;
 }
 
+.ref {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    padding: 1em;
+    background-color: rgba(255,255,255,0.7);
+    color: #333;
+}
+
+.ref-link {
+    cursor: pointer;
+}
+
+.ref-link-1 {
+    font-size: .7em;
+    font-weight: 900;
+    color: #333;
+    background-color: rgba(255,255,255,0.7);
+
+}
+
+// .ref-link-2 {
+//     background-color: rgba(255,255,255,0.2);
+// }
+
+.section-blue .ref-link-2 {
+     background-color: rgba(255,255,255,0.2);
+}
+
+.section-red .ref-link-2 {
+    background-color: rgba(0,0,0,0.2);
+}
+
+.citations {
+    display: flex;
+    justify-content: center;
+}
+
 @media (max-width: 800px) {
     .tweetcount {
         font-size: 18px;
