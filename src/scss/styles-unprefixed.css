@@ -21,6 +21,10 @@ body {
 p {
   font-weight: 600;
   line-height: 1.7em; }
+  @media (max-width: 730px) {
+    p {
+      line-height: 1.4em;
+      width: 100%; } }
 
 .section {
   padding: 2em 0;
@@ -54,21 +58,70 @@ p.center {
 .lyric-container {
   color: #333;
   font-weight: 700;
-  padding: 1em; }
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%; }
 
 .landing .lyric {
-  margin: 16px; }
+  margin: 16px 0;
+  text-align: center;
+  line-height: 1.4em; }
+  @media (max-width: 730px) {
+    .landing .lyric {
+      margin-bottom: 0; } }
 
-.illustration {
-  width: 300px; }
-  .illustration img {
-    max-height: 100%;
-    max-width: 100%; }
+@media (min-width: 730px) {
+  .illustration {
+    width: 300px; } }
+.illustration img {
+  max-height: 100%;
+  max-width: 100%; }
+
+@media (max-width: 730px) {
+  .illustration {
+    margin-top: 1em;
+    height: 200px;
+    order: 1; } }
+.lyric-container.lyric-container-1 .illustration {
+  align-self: flex-start; }
+@media (min-width: 730px) {
+  .lyric-container.lyric-container-1 {
+    flex-direction: row;
+    justify-content: center;
+    height: 370px; }
+    .lyric-container.lyric-container-1 .bubble {
+      align-self: flex-start;
+      order: 2; }
+    .lyric-container.lyric-container-1 .illustration {
+      align-self: flex-end;
+      margin-right: -40px; } }
+
+.lyric-container.lyric-container-2 .illustration {
+  align-self: center; }
+
+.lyric-container.lyric-container-3 .illustration {
+  align-self: flex-start; }
+
+.lyric-container.lyric-container-4 .illustration {
+  align-self: flex-end; }
+.lyric-container.lyric-container-4 .bubble {
+  margin-bottom: 1em; }
+
+.lyric-container.lyric-container-5 .bubble {
+  margin-bottom: 1em; }
+  .lyric-container.lyric-container-5 .bubble img {
+    left: 50%; }
 
 .lyric {
   margin-bottom: 1.4em;
-  white-space: nowrap;
   line-height: 1.4em; }
+  @media (max-width: 730px) {
+    .lyric {
+      line-height: 1em; }
+      .lyric br {
+        line-height: 1.5em; } }
 
 .lyric-source {
   font-style: italic;
@@ -91,6 +144,11 @@ p.center {
       left: 10%; }
     .bubble img.right {
       right: 10%; }
+    @media (max-width: 730px) {
+      .bubble img.left {
+        left: 70%; }
+      .bubble img.right {
+        right: 70%; } }
 
 #count {
   font-size: 4em;
@@ -180,6 +238,9 @@ footer {
   justify-content: center; }
 
 @media (max-width: 800px) {
+  .hashtag {
+    font-size: 2.5em; }
+
   .tweetcount {
     font-size: 18px;
     padding-top: 75px;
@@ -190,11 +251,11 @@ footer {
   html {
     font-size: 16px; }
 
-  .section {
-    padding: 3em 2em; }
-
   #count {
     font-size: 3.5em; }
+
+  .hashtag {
+    font-size: 2em; }
 
   .tweetcount {
     font-size: 16px;

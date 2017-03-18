@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:600,600i,700,700i,900,900i');
 
+$illustrations-bp: 730px;
+
 html {
     font-family: 'Source Sans Pro', sans-serif;
     box-sizing: border-box;
@@ -27,6 +29,10 @@ body {
 p {
     font-weight: 600;
     line-height: 1.7em;
+    @media (max-width: $illustrations-bp) {
+        line-height: 1.4em;
+        width: 100%;
+    }
 }
 
 .section {
@@ -69,14 +75,25 @@ p.center {
     color: #333;
     font-weight: 700;
     padding: 1em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
 }
 
 .landing .lyric {
-    margin: 16px;
+    margin: 16px 0;
+    text-align: center;
+    line-height: 1.4em;
+    @media (max-width: $illustrations-bp) {
+        margin-bottom: 0;
+    }
 }
 
 .illustration {
-    width: 300px;
+    @media (min-width: $illustrations-bp) {
+        width: 300px;
+    }
 
     img {
         max-height: 100%;
@@ -84,29 +101,74 @@ p.center {
     }
 }
 
-.lyric-container-1 {
+@media (max-width: $illustrations-bp) {
+    .illustration {
+        margin-top: 1em;
+        height: 200px;
+        order: 1;
+    }
 }
 
-.lyric-container-2 {
+.lyric-container.lyric-container-1 {
+    .illustration {
+        align-self: flex-start;
+    }
 
+    @media (min-width: $illustrations-bp) {
+        flex-direction: row;
+        justify-content: center;
+        height: 370px;
+        .bubble {
+            align-self: flex-start;
+            order: 2;
+        }
+        .illustration {
+            align-self: flex-end;
+            margin-right: -40px;
+        }
+    }
 }
 
-.lyric-container-3 {
-
+.lyric-container.lyric-container-2 {
+    .illustration {
+        align-self: center;
+    }
 }
 
-.lyric-container-4 {
-
+.lyric-container.lyric-container-3 {
+    .illustration {
+        align-self: flex-start;
+    }
 }
 
-.lyric-container-5 {
+.lyric-container.lyric-container-4 {
+    .illustration {
+        align-self: flex-end;
+    }
+    .bubble {
+        margin-bottom: 1em;
+    }
+}
 
+.lyric-container.lyric-container-5 {
+    .bubble {
+        margin-bottom: 1em;
+        img {
+            left: 50%;
+        }
+    }
 }
 
 .lyric {
     margin-bottom: 1.4em;
-    white-space: nowrap;
     line-height: 1.4em;
+
+    @media (max-width: $illustrations-bp) {
+        line-height: 1em;
+        br {
+            line-height: 1.5em;
+        }
+    }
 }
 
 .lyric-source {
@@ -135,6 +197,16 @@ p.center {
 
         &.right {
             right: 10%;
+        }
+
+        @media (max-width: $illustrations-bp) {
+            &.left {
+                left: 70%;
+            }
+
+            &.right {
+                right: 70%;
+            }
         }
     }
 }
@@ -250,6 +322,9 @@ footer {
 }
 
 @media (max-width: 800px) {
+    .hashtag {
+        font-size: 2.5em;
+    }
     .tweetcount {
         font-size: 18px;
         padding-top: 75px;
@@ -264,12 +339,12 @@ footer {
         font-size: 16px;
     }
 
-    .section {
-        padding: 3em 2em;
-    }
-
     #count {
         font-size: 3.5em;
+    }
+
+    .hashtag {
+        font-size: 2em;
     }
 
     .tweetcount {
