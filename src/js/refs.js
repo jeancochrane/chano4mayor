@@ -10,15 +10,18 @@ $(function() {
     function closeRef() {
         var $selected = $(".selected");
         if ($selected.length) {
+            var id = $selected.attr("id");
             $selected.slideToggle().removeClass("selected");
+            return id;
         }
     }
 
     function refOnClick(e) {
-        var id = "#" + $(this).data("id");
-        closeRef();
-        $(id).slideToggle().addClass("selected");
-        e.stopPropagation();
+        var id = $(this).data("id");
+        if (closeRef() !== id) {
+            $("#" + id).slideToggle().addClass("selected");
+            e.stopPropagation();
+        }
     }
 
 });
