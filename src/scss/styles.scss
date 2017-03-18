@@ -27,11 +27,10 @@ body {
 p {
     font-weight: 600;
     line-height: 1.4em;
-    max-width: 650px;
 }
 
 .section {
-    padding: 2em 15%;
+    padding: 2em 0;
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -43,6 +42,14 @@ p {
 
 .section-blue {
     background: url('images/sparkles.png'), linear-gradient(to bottom, rgba(91,61,87,1) 0%, rgba(76,101,227,1) 100%);
+}
+
+.wrap {
+    max-width: 1000px;
+    width: 90%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
 }
 
 .blue {
@@ -61,23 +68,79 @@ p.center {
 .lyric-container {
     color: #333;
     font-weight: 700;
-    background-color: rgba(255,255,255,0.7);
-    border-radius: 8px;
-    border-style: solid;
-    border-color: #333;
-    border-width: 1px;
     padding: 1em;
+}
+
+.landing .lyric {
+    margin: 16px;
+}
+
+.illustration {
+    width: 300px;
+
+    img {
+        max-height: 100%;
+        max-width: 100%;
+    }
+}
+
+.lyric-container-1 {
+}
+
+.lyric-container-2 {
+
+}
+
+.lyric-container-3 {
+
+}
+
+.lyric-container-4 {
+
+}
+
+.lyric-container-5 {
+
 }
 
 .lyric {
     text-align: center;
-    margin: 16px;
+    margin: 1em;
+    white-space: nowrap;
 }
 
 .lyric-source {
     font-style: italic;
     font-size: .75em;
     text-align: right;
+    margin-bottom: 1em;
+}
+
+.bubble {
+    display: inline-block;
+    padding: 1em;
+    position: relative;
+    background-color: rgba(255,255,255,0.7);
+    border-radius: 20px;
+
+    img {
+        position: absolute;
+        bottom: -15%;
+        height: 15%;
+        width: 15%;
+
+        &.left {
+            transform: scaleX(-1);
+            left: 10%;
+        }
+
+        &.right {
+            right: 10%;
+        }
+    }
+}
+
+.illustration {
 }
 
 #count {
@@ -119,7 +182,7 @@ footer {
         flex: 1 100%;
         max-width: none;
         margin: 0;
-        
+
         &:first-child {
             margin-bottom: 5px;
         }
@@ -198,13 +261,13 @@ footer {
 
 @media (max-width: 500px) {
     html {
-        font-size: 16px;    
+        font-size: 16px;
     }
-    
+
     .section {
         padding: 3em 2em;
     }
-    
+
     #count {
         font-size: 3.5em;
     }
