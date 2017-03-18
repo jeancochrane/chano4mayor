@@ -20,7 +20,7 @@ body {
 
 p {
   font-weight: 600;
-  line-height: 1.4em; }
+  line-height: 1.7em; }
 
 .section {
   padding: 2em 0;
@@ -66,19 +66,18 @@ p.center {
     max-width: 100%; }
 
 .lyric {
-  text-align: center;
-  margin: 1em;
-  white-space: nowrap; }
+  margin-bottom: 1.4em;
+  white-space: nowrap;
+  line-height: 1.4em; }
 
 .lyric-source {
   font-style: italic;
   font-size: .75em;
-  text-align: right;
-  margin-bottom: 1em; }
+  text-align: right; }
 
 .bubble {
   display: inline-block;
-  padding: 1em;
+  padding: 1.5em;
   position: relative;
   background-color: rgba(255, 255, 255, 0.7);
   border-radius: 20px; }
@@ -157,8 +156,9 @@ footer {
   position: fixed;
   bottom: 0;
   padding: 1em;
-  background-color: rgba(255, 255, 255, 0.7);
-  color: #333; }
+  background-color: rgba(255, 255, 255, 0.95);
+  color: #333;
+  max-width: 1000px; }
 
 .ref-link {
   cursor: pointer; }
