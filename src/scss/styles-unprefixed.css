@@ -265,10 +265,10 @@ footer {
   cursor: pointer; }
 
 .section-blue .ref-link {
-  background-color: rgba(255, 255, 255, 0.2); }
+  background-color: rgba(0, 0, 0, 0.5); }
 
 .section-red .ref-link {
-  background-color: rgba(0, 0, 0, 0.2); }
+  background-color: rgba(0, 0, 0, 0.3); }
 
 .citations {
   display: flex;
