@@ -85,34 +85,77 @@ p.center {
     height: 200px;
     order: 1; } }
 .lyric-container.lyric-container-1 .illustration {
-  align-self: flex-start; }
-@media (min-width: 730px) {
+  order: 1;
+  margin-bottom: -40px;
+  margin-top: -3px; }
+@media (max-width: 810px) {
+  .lyric-container.lyric-container-1 .bubble img {
+    left: 70%; } }
+@media (min-width: 810px) {
   .lyric-container.lyric-container-1 {
     flex-direction: row;
     justify-content: center;
-    height: 370px; }
+    height: 350px; }
     .lyric-container.lyric-container-1 .bubble {
       align-self: flex-start;
       order: 2; }
     .lyric-container.lyric-container-1 .illustration {
       align-self: flex-end;
-      margin-right: -40px; } }
+      margin-right: -60px; } }
 
-.lyric-container.lyric-container-2 .illustration {
-  align-self: center; }
+@media (min-width: 730px) {
+  .lyric-container.lyric-container-2 {
+    height: 470px;
+    flex-direction: row;
+    justify-content: center; }
+    .lyric-container.lyric-container-2 .bubble {
+      align-self: flex-start;
+      margin-right: -80px; }
+    .lyric-container.lyric-container-2 .illustration {
+      align-self: flex-end;
+      margin-bottom: -50px;
+      order: 2; } }
 
-.lyric-container.lyric-container-3 .illustration {
-  align-self: flex-start; }
+@media (min-width: 730px) {
+  .lyric-container.lyric-container-3 {
+    height: 300px;
+    flex-direction: row;
+    justify-content: center; }
+    .lyric-container.lyric-container-3 .bubble {
+      align-self: flex-start;
+      margin-left: -60px; }
+    .lyric-container.lyric-container-3 .illustration {
+      align-self: flex-end;
+      margin-bottom: -30px; } }
 
-.lyric-container.lyric-container-4 .illustration {
-  align-self: flex-end; }
 .lyric-container.lyric-container-4 .bubble {
   margin-bottom: 1em; }
+@media (min-width: 730px) {
+  .lyric-container.lyric-container-4 {
+    height: 300px;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start; }
+    .lyric-container.lyric-container-4 .bubble {
+      margin-right: -60px; }
+    .lyric-container.lyric-container-4 .illustration {
+      align-self: flex-end;
+      height: 270px;
+      width: auto;
+      margin-bottom: -30px;
+      order: 2; } }
 
 .lyric-container.lyric-container-5 .bubble {
   margin-bottom: 1em; }
   .lyric-container.lyric-container-5 .bubble img {
     left: 50%; }
+@media (min-width: 730px) {
+  .lyric-container.lyric-container-5 .bubble img {
+    left: 40%; }
+  .lyric-container.lyric-container-5 .illustration {
+    margin-left: -100px;
+    margin-bottom: -30px;
+    order: 2; } }
 
 .lyric {
   margin-bottom: 1.4em;

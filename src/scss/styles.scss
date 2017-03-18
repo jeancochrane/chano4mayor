@@ -91,6 +91,7 @@ p.center {
 }
 
 .illustration {
+
     @media (min-width: $illustrations-bp) {
         width: 300px;
     }
@@ -111,43 +112,95 @@ p.center {
 
 .lyric-container.lyric-container-1 {
     .illustration {
-        align-self: flex-start;
+        order: 1;
+        margin-bottom: -40px;
+        margin-top: -3px;
     }
 
-    @media (min-width: $illustrations-bp) {
+    @media (max-width: 810px) {
+        .bubble img {
+            left: 70%;
+        }
+    }
+
+
+    @media (min-width: 810px) {
         flex-direction: row;
         justify-content: center;
-        height: 370px;
+        height: 350px;
         .bubble {
             align-self: flex-start;
             order: 2;
         }
         .illustration {
             align-self: flex-end;
-            margin-right: -40px;
+            margin-right: -60px;
         }
     }
 }
 
 .lyric-container.lyric-container-2 {
-    .illustration {
-        align-self: center;
+    @media (min-width: $illustrations-bp) {
+        height: 470px;
+        flex-direction: row;
+        justify-content: center;
+
+        .bubble {
+            align-self: flex-start;
+            margin-right: -80px;
+        }
+
+        .illustration {
+            align-self: flex-end;
+            margin-bottom: -50px;
+            order: 2;
+        }
     }
+
 }
 
 .lyric-container.lyric-container-3 {
-    .illustration {
-        align-self: flex-start;
+     @media (min-width: $illustrations-bp) {
+        height: 300px;
+        flex-direction: row;
+        justify-content: center;
+
+        .bubble {
+            align-self: flex-start;
+            margin-left: -60px;
+        }
+
+        .illustration {
+            align-self: flex-end;
+            margin-bottom: -30px;
+        }
     }
+
 }
 
 .lyric-container.lyric-container-4 {
-    .illustration {
-        align-self: flex-end;
-    }
     .bubble {
         margin-bottom: 1em;
     }
+    @media (min-width: $illustrations-bp) {
+        height: 300px;
+        flex-direction: row;
+        justify-content: center;
+        align-items: flex-start;
+
+        .bubble {
+            margin-right: -60px;
+        }
+
+        .illustration {
+            align-self: flex-end;
+            height: 270px;
+            width: auto;
+            margin-bottom: -30px;
+            order: 2;
+        }
+    }
+
 }
 
 .lyric-container.lyric-container-5 {
@@ -157,6 +210,20 @@ p.center {
             left: 50%;
         }
     }
+    @media (min-width: $illustrations-bp) {
+        .bubble {
+            img {
+                left: 40%;
+            }
+        }
+
+        .illustration {
+            margin-left: -100px;
+            margin-bottom: -30px;
+            order: 2;
+        }
+    }
+
 }
 
 .lyric {
@@ -325,6 +392,7 @@ footer {
     .hashtag {
         font-size: 2.5em;
     }
+
     .tweetcount {
         font-size: 18px;
         padding-top: 75px;
