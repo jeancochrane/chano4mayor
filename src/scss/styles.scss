@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:600,600i,700,700i,900,900i');
 
+$illustrations-bp: 730px;
+
 html {
     font-family: 'Source Sans Pro', sans-serif;
     box-sizing: border-box;
@@ -26,12 +28,15 @@ body {
 
 p {
     font-weight: 600;
-    line-height: 1.4em;
-    max-width: 650px;
+    line-height: 1.7em;
+    @media (max-width: $illustrations-bp) {
+        line-height: 1.4em;
+        width: 100%;
+    }
 }
 
 .section {
-    padding: 2em 15%;
+    padding: 2em 0;
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -43,6 +48,14 @@ p {
 
 .section-blue {
     background: url('images/sparkles.png'), linear-gradient(to bottom, rgba(91,61,87,1) 0%, rgba(76,101,227,1) 100%);
+}
+
+.wrap {
+    max-width: 1000px;
+    width: 90%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
 }
 
 .blue {
@@ -61,23 +74,211 @@ p.center {
 .lyric-container {
     color: #333;
     font-weight: 700;
-    background-color: rgba(255,255,255,0.7);
-    border-radius: 8px;
-    border-style: solid;
-    border-color: #333;
-    border-width: 1px;
     padding: 1em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.landing .lyric {
+    margin: 16px 0;
+    text-align: center;
+    line-height: 1.4em;
+    @media (max-width: $illustrations-bp) {
+        margin-bottom: 0;
+    }
+}
+
+.illustration {
+
+    @media (min-width: $illustrations-bp) {
+        width: 300px;
+    }
+
+    img {
+        max-height: 100%;
+        max-width: 100%;
+    }
+}
+
+@media (max-width: $illustrations-bp) {
+    .illustration {
+        margin-top: 1em;
+        height: 200px;
+        order: 1;
+    }
+}
+
+.lyric-container.lyric-container-1 {
+    .illustration {
+        order: 1;
+        margin-bottom: -40px;
+        margin-top: -3px;
+    }
+
+    @media (max-width: 810px) {
+        .bubble img {
+            left: 70%;
+        }
+    }
+
+
+    @media (min-width: 810px) {
+        flex-direction: row;
+        justify-content: center;
+        height: 350px;
+        .bubble {
+            align-self: flex-start;
+            order: 2;
+        }
+        .illustration {
+            align-self: flex-end;
+            margin-right: -60px;
+        }
+    }
+}
+
+.lyric-container.lyric-container-2 {
+    @media (min-width: $illustrations-bp) {
+        height: 470px;
+        flex-direction: row;
+        justify-content: center;
+
+        .bubble {
+            align-self: flex-start;
+            margin-right: -80px;
+        }
+
+        .illustration {
+            align-self: flex-end;
+            margin-bottom: -50px;
+            order: 2;
+        }
+    }
+
+}
+
+.lyric-container.lyric-container-3 {
+     @media (min-width: $illustrations-bp) {
+        height: 300px;
+        flex-direction: row;
+        justify-content: center;
+
+        .bubble {
+            align-self: flex-start;
+            margin-left: -60px;
+        }
+
+        .illustration {
+            align-self: flex-end;
+            margin-bottom: -30px;
+        }
+    }
+
+}
+
+.lyric-container.lyric-container-4 {
+    .bubble {
+        margin-bottom: 1em;
+    }
+    @media (min-width: $illustrations-bp) {
+        height: 300px;
+        flex-direction: row;
+        justify-content: center;
+        align-items: flex-start;
+
+        .bubble {
+            margin-right: -60px;
+        }
+
+        .illustration {
+            align-self: flex-end;
+            height: 270px;
+            width: auto;
+            margin-bottom: -30px;
+            order: 2;
+        }
+    }
+
+}
+
+.lyric-container.lyric-container-5 {
+    .bubble {
+        margin-bottom: 1em;
+        img {
+            left: 50%;
+        }
+    }
+    @media (min-width: $illustrations-bp) {
+        .bubble {
+            img {
+                left: 40%;
+            }
+        }
+
+        .illustration {
+            margin-left: -100px;
+            margin-bottom: -30px;
+            order: 2;
+        }
+    }
+
 }
 
 .lyric {
-    text-align: center;
-    margin: 16px;
+    margin-bottom: 1.4em;
+    line-height: 1.4em;
+
+    @media (max-width: $illustrations-bp) {
+        line-height: 1em;
+        br {
+            line-height: 1.5em;
+        }
+    }
 }
 
 .lyric-source {
     font-style: italic;
     font-size: .75em;
     text-align: right;
+}
+
+.bubble {
+    display: inline-block;
+    padding: 1.5em;
+    position: relative;
+    background-color: rgba(255,255,255,0.7);
+    border-radius: 20px;
+
+    img {
+        position: absolute;
+        bottom: -15%;
+        height: 15%;
+        width: 15%;
+
+        &.left {
+            transform: scaleX(-1);
+            left: 10%;
+        }
+
+        &.right {
+            right: 10%;
+        }
+
+        @media (max-width: $illustrations-bp) {
+            &.left {
+                left: 70%;
+            }
+
+            &.right {
+                right: 70%;
+            }
+        }
+    }
+}
+
+.illustration {
 }
 
 #count {
@@ -119,7 +320,7 @@ footer {
         flex: 1 100%;
         max-width: none;
         margin: 0;
-        
+
         &:first-child {
             margin-bottom: 5px;
         }
@@ -153,8 +354,9 @@ footer {
     position: fixed;
     bottom: 0;
     padding: 1em;
-    background-color: rgba(255,255,255,0.7);
+    background-color: rgba(255,255,255,0.95);
     color: #333;
+    max-width: 1000px;
 }
 
 .ref-link {
@@ -187,6 +389,10 @@ footer {
 }
 
 @media (max-width: 800px) {
+    .hashtag {
+        font-size: 2.5em;
+    }
+
     .tweetcount {
         font-size: 18px;
         padding-top: 75px;
@@ -198,15 +404,15 @@ footer {
 
 @media (max-width: 500px) {
     html {
-        font-size: 16px;    
+        font-size: 16px;
     }
-    
-    .section {
-        padding: 3em 2em;
-    }
-    
+
     #count {
         font-size: 3.5em;
+    }
+
+    .hashtag {
+        font-size: 2em;
     }
 
     .tweetcount {

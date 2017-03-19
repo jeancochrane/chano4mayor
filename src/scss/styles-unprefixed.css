@@ -20,11 +20,14 @@ body {
 
 p {
   font-weight: 600;
-  line-height: 1.4em;
-  max-width: 650px; }
+  line-height: 1.7em; }
+  @media (max-width: 730px) {
+    p {
+      line-height: 1.4em;
+      width: 100%; } }
 
 .section {
-  padding: 2em 15%;
+  padding: 2em 0;
   display: flex;
   align-items: center;
   flex-direction: column; }
@@ -34,6 +37,13 @@ p {
 
 .section-blue {
   background: url("images/sparkles.png"), linear-gradient(to bottom, #5b3d57 0%, #4c65e3 100%); }
+
+.wrap {
+  max-width: 1000px;
+  width: 90%;
+  display: flex;
+  align-items: center;
+  flex-direction: column; }
 
 .blue {
   color: #004591; }
@@ -48,21 +58,140 @@ p.center {
 .lyric-container {
   color: #333;
   font-weight: 700;
-  background-color: rgba(255, 255, 255, 0.7);
-  border-radius: 8px;
-  border-style: solid;
-  border-color: #333;
-  border-width: 1px;
-  padding: 1em; }
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%; }
+
+.landing .lyric {
+  margin: 16px 0;
+  text-align: center;
+  line-height: 1.4em; }
+  @media (max-width: 730px) {
+    .landing .lyric {
+      margin-bottom: 0; } }
+
+@media (min-width: 730px) {
+  .illustration {
+    width: 300px; } }
+.illustration img {
+  max-height: 100%;
+  max-width: 100%; }
+
+@media (max-width: 730px) {
+  .illustration {
+    margin-top: 1em;
+    height: 200px;
+    order: 1; } }
+.lyric-container.lyric-container-1 .illustration {
+  order: 1;
+  margin-bottom: -40px;
+  margin-top: -3px; }
+@media (max-width: 810px) {
+  .lyric-container.lyric-container-1 .bubble img {
+    left: 70%; } }
+@media (min-width: 810px) {
+  .lyric-container.lyric-container-1 {
+    flex-direction: row;
+    justify-content: center;
+    height: 350px; }
+    .lyric-container.lyric-container-1 .bubble {
+      align-self: flex-start;
+      order: 2; }
+    .lyric-container.lyric-container-1 .illustration {
+      align-self: flex-end;
+      margin-right: -60px; } }
+
+@media (min-width: 730px) {
+  .lyric-container.lyric-container-2 {
+    height: 470px;
+    flex-direction: row;
+    justify-content: center; }
+    .lyric-container.lyric-container-2 .bubble {
+      align-self: flex-start;
+      margin-right: -80px; }
+    .lyric-container.lyric-container-2 .illustration {
+      align-self: flex-end;
+      margin-bottom: -50px;
+      order: 2; } }
+
+@media (min-width: 730px) {
+  .lyric-container.lyric-container-3 {
+    height: 300px;
+    flex-direction: row;
+    justify-content: center; }
+    .lyric-container.lyric-container-3 .bubble {
+      align-self: flex-start;
+      margin-left: -60px; }
+    .lyric-container.lyric-container-3 .illustration {
+      align-self: flex-end;
+      margin-bottom: -30px; } }
+
+.lyric-container.lyric-container-4 .bubble {
+  margin-bottom: 1em; }
+@media (min-width: 730px) {
+  .lyric-container.lyric-container-4 {
+    height: 300px;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start; }
+    .lyric-container.lyric-container-4 .bubble {
+      margin-right: -60px; }
+    .lyric-container.lyric-container-4 .illustration {
+      align-self: flex-end;
+      height: 270px;
+      width: auto;
+      margin-bottom: -30px;
+      order: 2; } }
+
+.lyric-container.lyric-container-5 .bubble {
+  margin-bottom: 1em; }
+  .lyric-container.lyric-container-5 .bubble img {
+    left: 50%; }
+@media (min-width: 730px) {
+  .lyric-container.lyric-container-5 .bubble img {
+    left: 40%; }
+  .lyric-container.lyric-container-5 .illustration {
+    margin-left: -100px;
+    margin-bottom: -30px;
+    order: 2; } }
 
 .lyric {
-  text-align: center;
-  margin: 16px; }
+  margin-bottom: 1.4em;
+  line-height: 1.4em; }
+  @media (max-width: 730px) {
+    .lyric {
+      line-height: 1em; }
+      .lyric br {
+        line-height: 1.5em; } }
 
 .lyric-source {
   font-style: italic;
   font-size: .75em;
   text-align: right; }
+
+.bubble {
+  display: inline-block;
+  padding: 1.5em;
+  position: relative;
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 20px; }
+  .bubble img {
+    position: absolute;
+    bottom: -15%;
+    height: 15%;
+    width: 15%; }
+    .bubble img.left {
+      transform: scaleX(-1);
+      left: 10%; }
+    .bubble img.right {
+      right: 10%; }
+    @media (max-width: 730px) {
+      .bubble img.left {
+        left: 70%; }
+      .bubble img.right {
+        right: 70%; } }
 
 #count {
   font-size: 4em;
@@ -128,8 +257,9 @@ footer {
   position: fixed;
   bottom: 0;
   padding: 1em;
-  background-color: rgba(255, 255, 255, 0.7);
-  color: #333; }
+  background-color: rgba(255, 255, 255, 0.95);
+  color: #333;
+  max-width: 1000px; }
 
 .ref-link {
   cursor: pointer; }
@@ -151,6 +281,9 @@ footer {
   justify-content: center; }
 
 @media (max-width: 800px) {
+  .hashtag {
+    font-size: 2.5em; }
+
   .tweetcount {
     font-size: 18px;
     padding-top: 75px;
@@ -161,11 +294,11 @@ footer {
   html {
     font-size: 16px; }
 
-  .section {
-    padding: 3em 2em; }
-
   #count {
     font-size: 3.5em; }
+
+  .hashtag {
+    font-size: 2em; }
 
   .tweetcount {
     font-size: 16px;
