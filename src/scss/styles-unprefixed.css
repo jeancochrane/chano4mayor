@@ -255,13 +255,15 @@ footer {
 .ref {
   display: none;
   position: fixed;
+  width: 100%;
   left: 50%;
   transform: translate(-50%, 0);
   bottom: 0;
   padding: 1em;
   background-color: rgba(255, 255, 255, 0.95);
   color: #333;
-  max-width: 1000px; }
+  max-width: 1000px;
+  line-height: 1.4em; }
 
 .ref-link {
   cursor: pointer; }
