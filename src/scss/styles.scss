@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:600,600i,700,700i,900,900i');
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:600,600i,700,700i,900');
 
 $illustrations-bp: 730px;
 
@@ -33,6 +33,12 @@ p {
         line-height: 1.4em;
         width: 100%;
     }
+}
+
+a, a:visited {
+    font-weight: 700;
+    text-decoration: underline;
+    color: #ff6360;
 }
 
 .section {
@@ -364,6 +370,7 @@ footer {
         color: #333;
         line-height: 1.4em;
         max-width: 90%;
+        font-size: 0.8em;
     }
 }
 
