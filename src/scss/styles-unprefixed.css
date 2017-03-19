@@ -5,14 +5,9 @@ html {
   font-size: 22px;
   letter-spacing: 1px; }
 
-h1, h2, h3, h4 {
-  font-weight: 900; }
-
 h1 {
+  font-weight: 900;
   font-size: 2em; }
-
-h2 {
-  font-size: 1.4em; }
 
 body {
   margin: 0;
@@ -76,6 +71,9 @@ p.center {
   @media (max-width: 730px) {
     .landing .lyric {
       margin-bottom: 0; } }
+.landing .lyric-source {
+  margin-top: 1em;
+  font-weight: 900; }
 
 @media (min-width: 730px) {
   .illustration {
@@ -199,6 +197,7 @@ p.center {
         right: 70%; } }
 
 #count {
+  font-weight: 900;
   font-size: 4em;
   flex: 1 100%;
   margin: 0;

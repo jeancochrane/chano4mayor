@@ -9,16 +9,9 @@ html {
     letter-spacing: 1px;
 }
 
-h1,h2,h3,h4 {
-    font-weight: 900;
-}
-
 h1 {
+    font-weight: 900;
     font-size: 2em;
-}
-
-h2 {
-    font-size: 1.4em;
 }
 
 body {
@@ -29,6 +22,7 @@ body {
 p {
     font-weight: 600;
     line-height: 1.7em;
+
     @media (max-width: $illustrations-bp) {
         line-height: 1.4em;
         width: 100%;
@@ -87,12 +81,19 @@ p.center {
     width: 100%;
 }
 
-.landing .lyric {
-    margin: 16px 0;
-    text-align: center;
-    line-height: 1.4em;
-    @media (max-width: $illustrations-bp) {
-        margin-bottom: 0;
+.landing {
+    .lyric {
+        margin: 16px 0;
+        text-align: center;
+        line-height: 1.4em;
+        @media (max-width: $illustrations-bp) {
+            margin-bottom: 0;
+        }
+    }
+
+    .lyric-source {
+        margin-top: 1em;
+        font-weight: 900;
     }
 }
 
@@ -288,6 +289,7 @@ p.center {
 }
 
 #count {
+    font-weight: 900;
     font-size: 4em;
     flex: 1 100%;
     margin: 0;
