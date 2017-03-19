@@ -356,15 +356,22 @@ footer {
     left: 50%;
     transform: translate(-50%, 0);
     bottom: 0;
-    padding: 1em;
     background-color: rgba(255,255,255,0.95);
-    color: #333;
     max-width: 1000px;
-    line-height: 1.4em;
+
+    p {
+        margin: 1em auto;
+        color: #333;
+        line-height: 1.4em;
+        max-width: 90%;
+    }
 }
 
 .ref-link {
     cursor: pointer;
+    white-space: nowrap;
+    border-radius: 6px;
+    padding: 2px 5px;
 }
 
 .section-blue .ref-link {
@@ -373,11 +380,6 @@ footer {
 
 .section-red .ref-link {
     background-color: rgba(0,0,0,0.3);
-}
-
-.citations {
-    display: flex;
-    justify-content: center;
 }
 
 @media (max-width: 800px) {
