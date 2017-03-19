@@ -189,8 +189,8 @@ p.center {
   border-radius: 20px; }
   .bubble img {
     position: absolute;
-    bottom: -15%;
-    height: 15%;
+    bottom: -30px;
+    height: 30px;
     width: 15%; }
     .bubble img.left {
       transform: scaleX(-1);
