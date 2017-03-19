@@ -23,8 +23,15 @@ p {
 
 a, a:visited {
   font-weight: 700;
-  text-decoration: underline;
-  color: #ff6360; }
+  padding: 1px 0;
+  text-decoration: none;
+  color: inherit;
+  border-bottom: 1px solid; }
+
+a:hover {
+  transition: 250ms all;
+  border-bottom-color: #fe4050;
+  border-bottom-width: 2px; }
 
 .section {
   padding: 2em 0;
@@ -33,7 +40,7 @@ a, a:visited {
   flex-direction: column; }
 
 .section-red {
-  background: url("images/sparkles.png"), linear-gradient(to bottom, #ff7f7d 0%, #fe4050 100%); }
+  background: url("images/sparkles.png"), linear-gradient(to bottom, #fa6746 0%, #fe4050 100%); }
 
 .section-blue {
   background: url("images/sparkles.png"), linear-gradient(to bottom, #5b3d57 0%, #4c65e3 100%); }
@@ -265,6 +272,9 @@ footer {
   bottom: 0;
   background-color: rgba(255, 255, 255, 0.95);
   max-width: 1000px; }
+  .ref a::before {
+    content: "";
+    display: block; }
   .ref p {
     margin: 1em auto;
     color: #333;
