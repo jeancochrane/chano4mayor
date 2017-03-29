@@ -120,7 +120,7 @@ p.center {
     justify-content: center; }
     .lyric-container.lyric-container-2 .bubble {
       align-self: flex-start;
-      margin-right: -80px; }
+      margin-right: -50px; }
     .lyric-container.lyric-container-2 .illustration {
       align-self: flex-end;
       margin-bottom: -50px;
