@@ -408,11 +408,19 @@ footer {
 }
 
 .section-blue .ref-link {
-     background-color: rgba(0,0,0,0.5);
+    background-color: rgba(0,0,0,0.5);
+
+    &:hover {
+        background-color: rgba(0,0,0,0.7);
+    }
 }
 
 .section-red .ref-link {
     background-color: rgba(0,0,0,0.3);
+
+    &:hover {
+        background-color: rgba(0,0,0,0.5);
+    }
 }
 
 @media (max-width: 800px) {
