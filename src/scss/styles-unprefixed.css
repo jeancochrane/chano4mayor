@@ -46,6 +46,14 @@ a:hover {
 .section-blue {
   background: url("images/sparkles.png"), linear-gradient(to bottom, #5b3d57 0%, #4c65e3 100%); }
 
+.voting p,
+.voting h2 {
+  width: 100%; }
+.voting h2 {
+  font-size: 1.2em;
+  margin-bottom: 0;
+  font-style: italic; }
+
 .wrap {
   max-width: 1000px;
   width: 90%;

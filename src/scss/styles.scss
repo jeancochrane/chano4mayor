@@ -61,6 +61,19 @@ a:hover {
     background: url('images/sparkles.png'), linear-gradient(to bottom, rgba(91,61,87,1) 0%, rgba(76,101,227,1) 100%);
 }
 
+.voting {
+    p,
+    h2 {
+        width: 100%;
+    }
+
+    h2 {
+        font-size: 1.2em;
+        margin-bottom: 0;
+        font-style: italic;
+    }
+}
+
 .wrap {
     max-width: 1000px;
     width: 90%;
