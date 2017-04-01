@@ -23,15 +23,14 @@ p {
 
 a, a:visited {
   font-weight: 700;
-  padding: 1px 0;
   text-decoration: none;
   color: inherit;
-  border-bottom: 1px solid; }
+  border-bottom: 2px solid; }
 
 a:hover {
   transition: 250ms all;
   border-bottom-color: #fe4050;
-  border-bottom-width: 2px; }
+  border-bottom-width: 3px; }
 
 .section {
   padding: 2em 0;
@@ -41,6 +40,8 @@ a:hover {
 
 .section-red {
   background: url("images/sparkles.png"), linear-gradient(to bottom, #fa6746 0%, #fe4050 100%); }
+  .section-red a:hover {
+    border-bottom-color: #4c65e3; }
 
 .section-blue {
   background: url("images/sparkles.png"), linear-gradient(to bottom, #5b3d57 0%, #4c65e3 100%); }
