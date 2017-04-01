@@ -1,12 +1,15 @@
-@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:600,600i,700,700i,900");
+@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:600,600i,700,700i,900|Roboto+Slab:500,700,900");
 html {
   font-family: 'Source Sans Pro', sans-serif;
   box-sizing: border-box;
   font-size: 22px;
   letter-spacing: 1px; }
 
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Roboto Slab', sans-serif; }
+
 h1 {
-  font-weight: 900;
+  font-weight: 500;
   font-size: 2em; }
 
 body {
@@ -47,12 +50,11 @@ a:hover {
   background: url("images/sparkles.png"), linear-gradient(to bottom, #5b3d57 0%, #4c65e3 100%); }
 
 .voting p,
-.voting h2 {
+.voting h4 {
   width: 100%; }
-.voting h2 {
-  font-size: 1.2em;
-  margin-bottom: 0;
-  font-style: italic; }
+.voting h4 {
+  font-size: 1em;
+  margin-bottom: 0; }
 
 .wrap {
   max-width: 1000px;
@@ -68,12 +70,13 @@ p.center {
   text-align: center; }
 
 .hashtag {
+  font-family: "Roboto Slab", sans-serif;
   font-size: 3em;
   font-weight: 900; }
 
 .lyric-container {
-  color: #333;
-  font-weight: 700;
+  color: #191919;
+  font-weight: 500;
   padding: 1em;
   display: flex;
   flex-direction: column;
@@ -296,13 +299,9 @@ footer {
 
 .section-blue .ref-link {
   background-color: rgba(0, 0, 0, 0.5); }
-  .section-blue .ref-link:hover {
-    background-color: rgba(0, 0, 0, 0.7); }
 
 .section-red .ref-link {
   background-color: rgba(0, 0, 0, 0.3); }
-  .section-red .ref-link:hover {
-    background-color: rgba(0, 0, 0, 0.5); }
 
 @media (max-width: 800px) {
   .hashtag {
