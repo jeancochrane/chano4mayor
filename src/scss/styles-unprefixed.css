@@ -295,10 +295,10 @@ footer {
   padding: 2px 5px; }
 
 .section-blue .ref-link {
-  background-color: rgba(0, 0, 0, 0.5); }
+  background-color: rgba(0, 0, 0, 0.4); }
   .section-blue .ref-link:hover, .section-blue .ref-link:focus {
     outline: none;
-    background-color: rgba(0, 0, 0, 0.8); }
+    background-color: black; }
 
 .section-red .ref-link {
   background-color: rgba(0, 0, 0, 0.3); }
@@ -349,7 +349,7 @@ footer {
   border-radius: 6px;
   padding: 5px;
   background-color: rgba(0, 0, 0, 0.3);
-  font-size: 1em;
+  font-size: 0.9em;
   margin-bottom: 0; }
   .faq .expandmore__button:hover, .faq .expandmore__button:focus {
     outline: none;

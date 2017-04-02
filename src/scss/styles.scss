@@ -404,12 +404,12 @@ footer {
 }
 
 .section-blue .ref-link {
-    background-color: rgba(0,0,0,0.5);
+    background-color: rgba(0,0,0,0.4);
 
     &:hover,
     &:focus {
         outline: none;
-        background-color: rgba(0,0,0,0.8);
+        background-color: black;
     }
 }
 
@@ -484,7 +484,7 @@ footer {
         border-radius: 6px;
         padding: 5px;
         background-color: rgba(0, 0, 0, 0.3);
-        font-size: 1em;
+        font-size: 0.9em;
         margin-bottom: 0;
 
         &:hover,
