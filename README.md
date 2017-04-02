@@ -171,8 +171,7 @@ We used the following open source tools to build this site, and they made our li
 - [npm](https://npmjs.com/) - The JavaScript package manager
 - [Grunt](https://gruntjs.com/) - The JavaScript task runner
 - [JQuery](https://jquery.com/) - The world's most ubiquitious DOM manipulator
-- [JQuery 
-ble Hide/Show Using ARIA](https://github.com/nico3333fr/jquery-accessible-hide-show-aria) - Accessible JS is crucial!
+- [JQuery Accessible Hide/Show Using ARIA](https://github.com/nico3333fr/jquery-accessible-hide-show-aria) - Accessible JS is crucial!
 - [Sass](http://sass-lang.com/) - Syntactically-awesome stylesheets
 
 Many thanks to the developers on these projects for enabling our mischief.
