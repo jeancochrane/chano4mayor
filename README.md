@@ -30,9 +30,13 @@ The following instructions will help you use our code to either a) suggest chang
 
 ## Before you start
 
-We used the following OS-level open source tools to build this site. You should install them on your computer using your favorite package manager before getting started:
+We used the following open source tools to build this site. You should install them on your computer using your favorite package manager before getting started:
 
 - [npm](https://docs.npmjs.com/getting-started/installing-node) - JavaScript package manager
+- [Grunt](https://gruntjs.com/) - The JavaScript task runner
+  - Although grunt is included in the `package.json` it's recommended to install it globally with `npm install -g grunt`
+- [Ruby](https://www.ruby-lang.org/)
+- [SASS](http://sass-lang.com/install) - CSS with superpowers
 
 ## Installation
 
@@ -66,11 +70,11 @@ open index.html
 xdg-open index.html
 ```
 
-If like you use the [LiveReload plugin](https://chrome.google.com/webstore/detail/livereload/jnihajbhpnppcggbcgedagnkighmdlei) for developing sites, Grunt will automatically start that for you, too.
+If like you can use the [LiveReload plugin](https://chrome.google.com/webstore/detail/livereload/jnihajbhpnppcggbcgedagnkighmdlei) for developing sites, Grunt will automatically start that for you, too.
 
 ## Directory structure
 
-This is a pretty simple static site, so most of the action happens in `index.html`. Develop CSS/JS in the `src/` directory, and Grunt will work its magic to produce minified files that live in the topmost level of the repo.
+This is a pretty simple static site, so most of the action happens in `index.html`. As you write code, Grunt will work its magic to produce minified files that live in the topmost level of the repo. Add JS to the `src/js/` directory and it will be concatenated and minified automatically; edit styles in `src/scss/styles.scss` and Grunt will compile to CSS, prefix, and minify for you (don't edit `styles.min.css` or `src/scss/styles-unprefixed` directly).
 
 Here's an overview of the important files in the directory:
 
@@ -117,13 +121,20 @@ The best way to suggest changes is to follow these steps:
 3. Make your feature addition or bug fix
 4. [Open a pull request](https://help.github.com/articles/creating-a-pull-request/) with a description of your work
 
-Before making pulls, makes ure to use Grunt to build your code for distribution:
+Before making pulls, make sure to use Grunt to build your code for distribution:
 
 ```bash
 grunt build
 ```
 
 This will automatically generate a bunch of necessary files.
+
+## Style
+
+Always follow the coding style you see in the files. Some general principles are: 
+ - Use logical indentation. If the file is indented with 4 spaces, use 4 spaces; if it's indented with tabs, use tabs.
+ - Always aim for clarity, and leave a comment any time you do something clever.
+ - Keep it accessible! Images should always have alt text, never indicate information with color alone, add title attributes to links, and make sure the color contrast ratios are at least up to AA standards. Use [this checklist](http://webaim.org/standards/wcag/checklist) for reference.
 
 ## Deployment
 
@@ -160,7 +171,8 @@ We used the following open source tools to build this site, and they made our li
 - [npm](https://npmjs.com/) - The JavaScript package manager
 - [Grunt](https://gruntjs.com/) - The JavaScript task runner
 - [JQuery](https://jquery.com/) - The world's most ubiquitious DOM manipulator
-- [JQuery Accessible Hide/Show Using ARIA](https://github.com/nico3333fr/jquery-accessible-hide-show-aria) - Accesible JS is crucial!
+- [JQuery 
+ble Hide/Show Using ARIA](https://github.com/nico3333fr/jquery-accessible-hide-show-aria) - Accessible JS is crucial!
 - [Sass](http://sass-lang.com/) - Syntactically-awesome stylesheets
 
 Many thanks to the developers on these projects for enabling our mischief.
