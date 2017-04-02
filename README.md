@@ -108,11 +108,22 @@ chano4mayor/
 
 ## Contributing
 
-We welcome [issues](https://github.com/jeancochrane/chano4mayor/issues) and [pull requests](https://github.com/jeancochrane/chano4mayor/pulls) if you want to suggest changes to the site. Before making pulls, however, use Grunt to build your code for distribution:
+We welcome [issues](https://github.com/jeancochrane/chano4mayor/issues) and [pull requests](https://github.com/jeancochrane/chano4mayor/pulls) if you want to suggest changes to the site. 
+
+The best way to suggest changes is to follow these steps:
+
+1. [Fork](https://help.github.com/articles/fork-a-repo/) the project
+2. Make a new [feature branch](https://gist.github.com/digitaljhelms/4287848#feature-branches) for your changes so we can merge them easily
+3. Make your feature addition or bug fix
+4. [Open a pull request](https://help.github.com/articles/creating-a-pull-request/) with a description of your work
+
+Before making pulls, makes ure to use Grunt to build your code for distribution:
 
 ```bash
 grunt build
 ```
+
+This will automatically generate a bunch of necessary files.
 
 ## Team
 
