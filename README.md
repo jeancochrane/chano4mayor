@@ -125,6 +125,23 @@ grunt build
 
 This will automatically generate a bunch of necessary files.
 
+## Deployment
+
+Contributors to this project can deploy by tagging a commit and pushing to master (untagged commits will trigger a Travis build, but won't deploy):
+
+```bash
+# Make a commit
+git commit -am "I did some stuff!"
+
+# Tag it with a short description!
+git tag short-description-of-your-work
+
+# Push the commit and the tag
+git push --tags origin master
+```
+
+Non-contributors won't be able to deploy no matter how hard they try. Sorry! Make a pull request instead.
+
 ## Team
 
 You have these fine folks to blame for this mess:
