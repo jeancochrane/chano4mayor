@@ -299,9 +299,13 @@ footer {
 
 .section-blue .ref-link {
   background-color: rgba(0, 0, 0, 0.5); }
+  .section-blue .ref-link:hover {
+    background-color: rgba(0, 0, 0, 0.7); }
 
 .section-red .ref-link {
   background-color: rgba(0, 0, 0, 0.3); }
+  .section-red .ref-link:hover {
+    background-color: rgba(0, 0, 0, 0.5); }
 
 @media (max-width: 800px) {
   .hashtag {
