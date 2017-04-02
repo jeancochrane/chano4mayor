@@ -1,3 +1,4 @@
+/* Fonts */
 @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:600,600i,700,700i,900|Roboto+Slab:500,700,900");
 html {
   font-family: 'Source Sans Pro', sans-serif;
@@ -35,8 +36,16 @@ a:hover {
   border-bottom-color: #fe4050;
   border-bottom-width: 3px; }
 
+/* Section layout */
 .section {
   padding: 2em 0;
+  display: flex;
+  align-items: center;
+  flex-direction: column; }
+
+.wrap {
+  max-width: 1000px;
+  width: 90%;
   display: flex;
   align-items: center;
   flex-direction: column; }
@@ -49,6 +58,7 @@ a:hover {
 .section-blue {
   background: url("images/sparkles.png"), linear-gradient(to bottom, #5b3d57 0%, #4c65e3 100%); }
 
+/* FAQ section */
 .voting p,
 .voting h4 {
   width: 100%; }
@@ -56,32 +66,17 @@ a:hover {
   font-size: 1em;
   margin-bottom: 0; }
 
-.wrap {
-  max-width: 1000px;
-  width: 90%;
-  display: flex;
-  align-items: center;
-  flex-direction: column; }
-
 .blue {
   color: #004591; }
 
 .center {
   text-align: center; }
 
+/* Landing (section 1) */
 .hashtag {
   font-family: "Roboto Slab", sans-serif;
   font-size: 3em;
   font-weight: 900; }
-
-.lyric-container {
-  color: #191919;
-  font-weight: 500;
-  padding: 1em;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%; }
 
 .landing .lyric {
   margin: 16px 0;
@@ -93,6 +88,16 @@ a:hover {
 .landing .lyric-source {
   margin-top: 2em;
   font-weight: 900; }
+
+/* Lyrics/Illustrations layout */
+.lyric-container {
+  color: #191919;
+  font-weight: 500;
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%; }
 
 @media (min-width: 730px) {
   .illustration {
@@ -335,9 +340,6 @@ footer {
   .disclaimer {
     font-size: 10px; } }
 /* FAQ */
-#faq {
-  margin: 30px 0; }
-
 .issue_details {
   display: none; }
 

@@ -1,3 +1,4 @@
+/* Fonts */
 @import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:600,600i,700,700i,900|Roboto+Slab:500,700,900');
 
 $illustrations-bp: 730px;
@@ -46,8 +47,17 @@ a:hover {
     border-bottom-width: 3px;
 }
 
+/* Section layout */
 .section {
     padding: 2em 0;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.wrap {
+    max-width: 1000px;
+    width: 90%;
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -65,6 +75,8 @@ a:hover {
     background: url('images/sparkles.png'), linear-gradient(to bottom, rgba(91,61,87,1) 0%, rgba(76,101,227,1) 100%);
 }
 
+/* FAQ section */
+
 .voting {
     p,
     h4 {
@@ -77,14 +89,6 @@ a:hover {
     }
 }
 
-.wrap {
-    max-width: 1000px;
-    width: 90%;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-}
-
 .blue {
     color: rgb(0,69,145);
 }
@@ -93,20 +97,11 @@ a:hover {
     text-align: center;
 }
 
+/* Landing (section 1) */
 .hashtag {
     font-family: "Roboto Slab", sans-serif;
     font-size: 3em;
     font-weight: 900;
-}
-
-.lyric-container {
-    color: #191919;
-    font-weight: 500;
-    padding: 1em;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
 }
 
 .landing {
@@ -124,6 +119,18 @@ a:hover {
         font-weight: 900;
     }
 }
+
+/* Lyrics/Illustrations layout */
+.lyric-container {
+    color: #191919;
+    font-weight: 500;
+    padding: 1em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
 
 .illustration {
 
@@ -235,7 +242,6 @@ a:hover {
             order: 2;
         }
     }
-
 }
 
 .lyric-container.lyric-container-5 {
@@ -258,7 +264,6 @@ a:hover {
             order: 2;
         }
     }
-
 }
 
 .lyric {
@@ -467,11 +472,6 @@ footer {
 
 
 /* FAQ */
-
-#faq {
-    margin: 30px 0;
-}
-
 .issue_details {
     display: none;
 }
@@ -519,5 +519,3 @@ footer {
     transform: scaleY(-1);
     transition: transform .5s ease;
 }
-
-
