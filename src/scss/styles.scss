@@ -75,19 +75,6 @@ a:hover {
     background: url('images/sparkles.png'), linear-gradient(to bottom, rgba(91,61,87,1) 0%, rgba(76,101,227,1) 100%);
 }
 
-/* FAQ section */
-
-.voting {
-    p,
-    h4 {
-        width: 100%;
-    }
-
-    h4 {
-        font-size: 1em;
-        margin-bottom: 0;
-    }
-}
 
 .blue {
     color: rgb(0,69,145);
@@ -419,16 +406,20 @@ footer {
 .section-blue .ref-link {
     background-color: rgba(0,0,0,0.5);
 
-    &:hover {
-        background-color: rgba(0,0,0,0.7);
+    &:hover,
+    &:focus {
+        outline: none;
+        background-color: rgba(0,0,0,0.8);
     }
 }
 
 .section-red .ref-link {
     background-color: rgba(0,0,0,0.3);
 
-    &:hover {
-        background-color: rgba(0,0,0,0.5);
+    &:hover,
+    &:focus {
+        outline: none;
+        background-color: rgba(0,0,0,0.8);
     }
 }
 
@@ -471,51 +462,66 @@ footer {
 }
 
 
-/* FAQ */
-.issue_details {
-    display: none;
-}
+/* FAQ section */
 
-.issue_details.toggled_open {
-    display: inline;
-}
+.faq {
+    p {
+        width: 100%;
+    }
 
-.toggle-issue {
-    cursor: pointer;
-}
+    h4 {
+        align-self: flex-start;
+    }
+    .expandmore__button {
+        text-align: left;
+        color: inherit;
+        font-weight: inherit;
+        font-face: inherit;
+        border: none;
+        cursor: pointer;
+        align-self: flex-start;
+        border-radius: 6px;
+        padding: 2px 5px;
+        background-color: rgba(0, 0, 0, 0.3);
+        font-size: 1em;
+        margin-bottom: 0;
 
-@media (min-width: $illustrations-bp) {
-    .toggle-issue, .issue_details {
-        padding: 10px 0;
-        margin-left: 120px;
+        &:hover,
+        &:focus {
+            outline: none;
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+    }
+
+    .expandmore__to_expand {
+        align-self: flex-start;
+    }
+
+    @media (min-width: $illustrations-bp) {
+        .expandmore__to_expand,
+        h4 {
+            margin-left: 120px;
+        }
+
+        .expandmore__button:before {
+            content: '';
+            display: inline-block;
+            height: 0;
+            border-style: solid;
+            border-width: 0 8px 12px 8px;
+            border-color: transparent transparent white transparent;
+            margin-right: .5em;
+            opacity: 0.7;
+            transform: scaleY(1);
+            transition: transform .5s ease;
+        }
+
+        .expandmore__button.is-opened:before {
+            transform: scaleY(-1);
+        }
     }
 }
 
-.toggle-issue::after {
-    content: '';
-    display: inline-block;
-    width: -5px;
-    height: 0;
-    border-style: solid;
-    border-width: 0 8px 12px 8px;
-    border-color: transparent transparent white transparent;
-    margin-left: 16px;
-    opacity: 0.7;
-}
-
-.toggle-issue.issue_closed::after {
-    -moz-transform: scaleY(1);
-    -o-transform: scaleY(1);
-    -webkit-transform: scaleY(1);
-    transform: scaleY(1);
-    transition: transform .5s ease;
-    opacity: 0.7;
-}
-
-.toggle-issue.issue_open::after {
-    -moz-transform: scaleY(-1);
-    -o-transform: scaleY(-1);
-    -webkit-transform: scaleY(-1);
-    transform: scaleY(-1);
-    transition: transform .5s ease;
+.js-to_expand[data-hidden=true] {
+    display: none;
 }
