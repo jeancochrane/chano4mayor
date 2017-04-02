@@ -6,7 +6,7 @@ html {
   font-size: 22px;
   letter-spacing: 1px; }
 
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h3, h4, h5, h6, button {
   font-family: 'Roboto Slab', sans-serif; }
 
 h1 {
@@ -339,15 +339,15 @@ footer {
 .faq h4 {
   align-self: flex-start; }
 .faq .expandmore__button {
+  letter-spacing: 1px;
   text-align: left;
   color: inherit;
-  font-weight: inherit;
-  font-face: inherit;
+  font-weight: 600;
   border: none;
   cursor: pointer;
   align-self: flex-start;
   border-radius: 6px;
-  padding: 2px 5px;
+  padding: 5px;
   background-color: rgba(0, 0, 0, 0.3);
   font-size: 1em;
   margin-bottom: 0; }
@@ -355,13 +355,15 @@ footer {
     outline: none;
     background-color: rgba(0, 0, 0, 0.8); }
 .faq .expandmore__to_expand {
-  align-self: flex-start; }
+  align-self: flex-start;
+  padding-left: 1em; }
 @media (min-width: 730px) {
   .faq .expandmore__to_expand,
   .faq h4 {
-    margin-left: 120px; }
+    margin-left: 3em; }
   .faq .expandmore__button:before {
     content: '';
+    vertical-align: middle;
     display: inline-block;
     height: 0;
     border-style: solid;
