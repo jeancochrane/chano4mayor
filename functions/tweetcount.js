@@ -26,8 +26,8 @@ exports.handler = function(event, context, callback) {
                 statusCode: 200,
                 body: data
             })
-        }).on('error', function(err) {
-            callback(err);
         });
+    }).on('error', function(err) {
+        callback(err);
     });
 }
