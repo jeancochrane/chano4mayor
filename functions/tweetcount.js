@@ -20,14 +20,19 @@ exports.handler = function(event, context, callback) {
         }
     };
 
+    console.log('Initializing https request...');
+
     https.get(options, function(res) {
+        console.log('https request sent! Waiting for response...');
         res.on('data', function(data) {
+            console.log('Data received');
             callback(null, {
                 statusCode: 200,
                 body: data
             })
         });
     }).on('error', function(err) {
+        console.log('Error in the https request');
         callback(err);
     });
 }
