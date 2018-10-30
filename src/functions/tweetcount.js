@@ -30,7 +30,7 @@ exports.handler = function(event, context, callback) {
             callback(null, {
                 statusCode: 200,
                 headers: responseHeaders,
-                body: data
+                body: String(count)
             });
         });
     }).on('error', err => {
