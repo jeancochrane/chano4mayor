@@ -1,0 +1,27 @@
+version: "3"
+
+services:
+
+  functions:
+    image: node:10-slim
+    volumes:
+      - .:/lambda
+    working_dir: /lambda
+    ports:
+      - "1234:1234"
+    env_file:
+      - .env
+    entrypoint: "node_modules/netlify-lambda/bin/cmd.js"
+    command: ["serve", "./src/functions", "-p", "1234"]
+
+  grunt:
+    build: .
+    depends_on:
+      - functions
+    volumes:
+      - .:/chano4mayor
+    working_dir: /chano4mayor
+    ports:
+      - "9000:9000"
+    env_file:
+      - .env
