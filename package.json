@@ -20,8 +20,6 @@
     "autoprefixer": "^6.7.6",
     "cssnano": "^3.10.0",
     "grunt": "^1.0.1",
-    "grunt-connect-proxy": "^0.2.0",
-    "grunt-contrib-connect": "^2.0.0",
     "grunt-contrib-sass": "^1.0.0",
     "grunt-contrib-uglify": "^2.2.0",
     "grunt-contrib-watch": "^1.0.0",

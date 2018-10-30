@@ -77,26 +77,7 @@ module.exports = function(grunt) {
                 }
             }
         },
-
-        connect: {
-            server: {
-                options: {
-                    hostname: '0.0.0.0',
-                    port: 9000,
-                    keepalive: true,
-                    middleware: function (connect, options) {
-                        var proxy = require('grunt-connect-proxy/lib/utils').proxyRequest;
-                        return [proxy];
-                    }
-                },
-                proxies: [{
-                    context: '/.netlify/functions',
-                    host: 'functions',
-                    port: 1234
-                }]
-            }
-        }
     });
     grunt.registerTask('build', ['sass', 'postcss', 'uglify']);
-    grunt.registerTask('default', ['build', 'configureProxies:server', 'connect:server']);
+    grunt.registerTask('default', ['build', 'watch']);
 };

@@ -8,11 +8,11 @@ services:
       - .:/lambda
     working_dir: /lambda
     ports:
-      - "1234:1234"
+      - "9000:9000"
     env_file:
       - .env
     entrypoint: "node_modules/netlify-lambda/bin/cmd.js"
-    command: ["serve", "./src/functions", "-p", "1234"]
+    command: ["serve", "./src/functions"]
 
   grunt:
     build: .
@@ -21,7 +21,15 @@ services:
     volumes:
       - .:/chano4mayor
     working_dir: /chano4mayor
-    ports:
-      - "9000:9000"
     env_file:
       - .env
+
+  nginx:
+    image: nginx:latest
+    depends_on:
+      - grunt
+    ports:
+      - "1234:1234"
+    volumes:
+      - ./nginx/dev.conf:/etc/nginx/conf.d/dev.conf
+      - .:/usr/share/nginx/html/chano4mayor
