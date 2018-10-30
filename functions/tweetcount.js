@@ -6,7 +6,7 @@ exports.handler = function(event, context, callback) {
     // build config for Netlify.
     var bearerToken = process.env.TWITTER_BEARER_TOKEN;
     if (bearerToken == null) {
-        callback('Could not find required TWITTER_BEARER_TOKEN environmental variable.')
+        callback('Could not find required TWITTER_BEARER_TOKEN environmental variable.');
     }
 
     var authToken = 'Bearer ' + bearerToken;
@@ -16,7 +16,7 @@ exports.handler = function(event, context, callback) {
         hostname: 'api.twitter.com',
         path: '/1.1/search/tweets.json' + queryString,
         headers: {
-            'Authorization': authToken;
+            'Authorization': authToken
         }
     };
 
