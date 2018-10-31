@@ -1,0 +1,34 @@
+#!/bin/bash
+
+set -eo pipefail
+
+function usage() {
+    echo -n "Usage: $(basename "$0")
+
+Make sure containers and NPM modules are up to date.
+"
+}
+
+if [ "${BASH_SOURCE[0]}" = "${0}" ]
+then
+    if [ "${1:-}" = "--help" ]
+    then
+        usage
+    else
+        echo "Building containers..."
+        echo "----------------------------------------------------------"
+        docker-compose build
+        echo
+
+        echo "Installing NPM modules..."
+        echo "----------------------------------------------------------"
+        docker-compose run --rm --no-deps --entrypoint "yarn install" grunt
+
+        echo "Stopping all running services..."
+        echo "----------------------------------------------------------"
+        docker-compose stop
+        echo
+
+        echo "Build complete!"
+    fi
+fi

@@ -21,8 +21,6 @@ services:
     volumes:
       - .:/chano4mayor
     working_dir: /chano4mayor
-    env_file:
-      - .env
 
   nginx:
     image: nginx:latest
