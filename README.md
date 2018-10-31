@@ -28,87 +28,52 @@ To see that code or steal it for your own mischief, [head on over to its repo.](
 
 The following instructions will help you use our code to either a) suggest changes to this site or b) draft your own favorite rapper to run for office.
 
-## Before you start
-
-We used the following open source tools to build this site. You should install them on your computer using your favorite package manager before getting started:
-
-- [npm](https://docs.npmjs.com/getting-started/installing-node) - JavaScript package manager
-- [Grunt](https://gruntjs.com/) - The JavaScript task runner
-  - Although grunt is included in the `package.json` it's recommended to install it globally with `npm install -g grunt`
-- [Ruby](https://www.ruby-lang.org/)
-- [SASS](http://sass-lang.com/install) - CSS with superpowers
-
 ## Installation
 
-Start by cloning our repo:
+The chano4mayor development environment is containerized using Docker. It also includes a set of convenience scripts to help you get up and running quickly.
+
+0. Before getting started, make sure [you have Docker Compose installed](https://docs.docker.com/compose/install/).
+
+1. Start by cloning our repo:
 
 ```bash
 # Assumes SSH - use the HTTPS link instead if you like it like that
 git clone git@github.com:jeancochrane/chano4mayor.git
 ```
 
-Next, change into the directory and install dependencies with npm:
+2. Next, change into the directory and install dependencies with the `update` script:
 
 ```bash
 cd chano4mayor
-npm install
+./scripts/update
 ```
 
-Use [Grunt](https://gruntjs.com/) to compile and minify JS/CSS while you work:
+3. To serve a copy of the site locally, use the `server` script. The site will be accessible on [`localhost:1234`](http://localhost:1234):
 
 ```bash
-grunt
+./scripts/server
 ```
 
-Finally, open up the page in your favorite browser to view your work:
+(The `server` script also accepts optional arguments that allow you to run each service in isolation. This is helpful e.g. if you only want to debug the Lambda function that runs the Tweet counting script. For more information, run `./scripts/server --help`.)
+
+4. When you're ready to push changes, confirm that you've built all the relevant assets using the `cibuild` script:
 
 ```bash
-# Mac users:
-open index.html
-
-# Linux aficionados:
-xdg-open index.html
+./scripts/cibuild
 ```
 
-If like you can use the [LiveReload plugin](https://chrome.google.com/webstore/detail/livereload/jnihajbhpnppcggbcgedagnkighmdlei) for developing sites, Grunt will automatically start that for you, too.
-
-## Directory structure
-
-This is a pretty simple static site, so most of the action happens in `index.html`. As you write code, Grunt will work its magic to produce minified files that live in the topmost level of the repo. Add JS to the `src/js/` directory and it will be concatenated and minified automatically; edit styles in `src/scss/styles.scss` and Grunt will compile to CSS, prefix, and minify for you (don't edit `styles.min.css` or `src/scss/styles-unprefixed` directly).
-
-Here's an overview of the important files in the directory:
+5. Finally, if you'd like to clean up Docker data and containers after you finish developing, use the `clean` script:
 
 ```bash
-chano4mayor/
-├── index.html
-├── src
-│   ├── js
-│   │   ├── jquery-accessible-hide-show-aria.js
-│   │   ├── refs.js
-│   │   └── tweetcount.js
-│   └── scss
-│       ├── styles-unprefixed.css
-│       ├── styles-unprefixed.css.map
-│       └── styles.scss
-├── styles.min.css
-├── styles.min.css.map
-├── scripts.min.js
-└── images
-   ├── chano_hat.svg
-   ├── favicon
-   │   └── chano_four.png
-   ├── illustrations
-   │   ├── chano1.png
-   │   ├── chano10.png
-   │   ├── chano4.png
-   │   ├── chano5.png
-   │   ├── chano8.png
-   │   └── chano9.png
-   ├── sparkles.png
-   ├── triangle.svg
-   └── twitter_white.svg
-
+# Stop all services and clean up unused container images/volumes
+./scripts/clean
 ```
+
+## A note about compiled assets
+
+The development setup should compile minified assets for you based on your source files. When you're working on code, make sure you're editing the source files in the `src/` directory.
+
+**Do not edit** directly edit the compiled/minified files in the home directory, or in the `functions/` output directory! Instead, make changes to the corresponding files in `src/` and then run `./scripts/cibuild` to make sure that the files get compiled for distribution.
 
 ## Contributing
 
@@ -121,13 +86,11 @@ The best way to suggest changes is to follow these steps:
 3. Make your feature addition or bug fix
 4. [Open a pull request](https://help.github.com/articles/creating-a-pull-request/) with a description of your work
 
-Before making pulls, make sure to use Grunt to build your code for distribution:
+Before making pulls, make sure to build your code for distribution:
 
 ```bash
-grunt build
+./scripts/cibuild
 ```
-
-This will automatically generate a bunch of necessary files.
 
 ## Style
 
