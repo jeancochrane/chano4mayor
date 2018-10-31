@@ -41,14 +41,27 @@ The chano4mayor development environment is containerized using Docker. It also i
 git clone git@github.com:jeancochrane/chano4mayor.git
 ```
 
-2. Next, change into the directory and install dependencies with the `update` script:
+2. Getting Tweet counts to appear on Chance's hat requires a Twitter API
+[bearer token](https://developer.twitter.com/en/docs/basics/authentication/overview/application-only.html).
+Once you've got a bearer token, copy the `.env.example` file and add your API
+token:
+
+```bash
+# <your_token_here> is the placeholder used in the example file, while $TOKEN
+# represents your actual API token -- i.e., replace $TOKEN with your bearer
+# token in the following command, but leave the rest the same
+sed 's/<your_token_here>/$TOKEN' .env.example > .env
+
+```
+
+3. Next, change into the directory and install dependencies with the `update` script:
 
 ```bash
 cd chano4mayor
 ./scripts/update
 ```
 
-3. To serve a copy of the site locally, use the `server` script. The site will be accessible on [`localhost:1234`](http://localhost:1234):
+4. To serve a copy of the site locally, use the `server` script. The site will be accessible on [`localhost:1234`](http://localhost:1234):
 
 ```bash
 ./scripts/server
@@ -56,13 +69,13 @@ cd chano4mayor
 
 (The `server` script also accepts optional arguments that allow you to run each service in isolation. This is helpful e.g. if you only want to debug the Lambda function that runs the Tweet counting script. For more information, run `./scripts/server --help`.)
 
-4. When you're ready to push changes, confirm that you've built all the relevant assets using the `cibuild` script:
+5. When you're ready to push changes, confirm that you've built all the relevant assets using the `cibuild` script:
 
 ```bash
 ./scripts/cibuild
 ```
 
-5. Finally, if you'd like to clean up Docker data and containers after you finish developing, use the `clean` script:
+6. Finally, if you'd like to clean up Docker data and containers after you finish developing, use the `clean` script:
 
 ```bash
 # Stop all services and clean up unused container images/volumes
