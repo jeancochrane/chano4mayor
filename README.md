@@ -16,7 +16,7 @@ We want a mayor who will fight for public education. We want a mayor who will re
 
 We want a mayor like Chance.
 
-Not convinced that Chance should be the next mayor of Chicago? [Check out the site](https://chano4mayor.com/) to read why we think you should change your mind, or [let us know](https://twitter.com/chano4mayor2k19) who you think should run against Rahm in 2019.
+Not convinced that Chance should be the next mayor of Chicago? [Check out the site](https://chano4mayor.com/) to read why we think you should change your mind, or [let us know](https://twitter.com/chano4mayor2k19) who you think should run in 2019.
 
 ## Twitter bot
 
@@ -75,18 +75,11 @@ cd chano4mayor
 ./scripts/cibuild
 ```
 
-6. Finally, if you'd like to clean up Docker data and containers after you finish developing, use the `clean` script:
-
-```bash
-# Stop all services and clean up unused container images/volumes
-./scripts/clean
-```
-
 ## A note about compiled assets
 
 The development setup should compile minified assets for you based on your source files. When you're working on code, make sure you're editing the source files in the `src/` directory.
 
-**Do not edit** directly edit the compiled/minified files in the home directory, or in the `functions/` output directory! Instead, make changes to the corresponding files in `src/` and then run `./scripts/cibuild` to make sure that the files get compiled for distribution.
+**Do not directly edit** the compiled/minified files in the home directory, or in the `functions/` output directory! Instead, make changes to the corresponding files in `src/` and then run `./scripts/cibuild` to make sure that the files get compiled for distribution.
 
 ## Contributing
 

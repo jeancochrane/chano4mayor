@@ -16,27 +16,7 @@ Argument options:
 "
 }
 
-function cleanup() {
-    docker-compose down
-}
-
-function checkport() {
-    #
-    # Check that a given port has no processes running on it.
-    #
-    if [[ $(netstat -nlp | grep ":::${1}") ]];
-    then
-        echo "It appears you already have a process running on port ${1}:"
-        echo
-        echo $(netstat -nlp | grep ":::${1}")
-        echo
-        echo "Terminate that process, or bind the service to another port."
-        exit 1
-    fi
-}
-
 function run_functions_service() {
-    checkport 9000
     docker-compose run --rm --service-ports functions "$@"
 }
 
@@ -45,9 +25,6 @@ function run_grunt_service() {
 }
 
 function run_nginx_service() {
-    # Check ports for the lambda function service, since Nginx depends on it.
-    checkport 9000
-    checkport 1234
     docker-compose run --rm --service-ports nginx "$@"
 }
 

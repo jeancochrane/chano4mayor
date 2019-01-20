@@ -13,7 +13,7 @@ $(function() {
             onError('Response data did not contain a "statuses" attribute: ' + rawData)
         }
 
-        var count = data.statuses.reduce(function(acc) { return acc+1}, 0).toLocaleString();
+        var count = data.statuses.length.toLocaleString();
         if (count && count > 0) {
             $("#count").html(count);
         } else {
