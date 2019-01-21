@@ -423,6 +423,17 @@ footer {
     }
 }
 
+.modal {
+    color: black;
+
+	.close-modal {
+		border: none;
+	}
+    blockquote {
+        color: #707070;
+    }
+}
+
 @media (max-width: 800px) {
     .hashtag {
         font-size: 2.5em;
