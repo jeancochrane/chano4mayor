@@ -24,6 +24,8 @@
     "grunt-contrib-uglify": "^2.2.0",
     "grunt-contrib-watch": "^1.0.0",
     "grunt-postcss": "^0.8.0",
-    "load-grunt-tasks": "^3.5.2"
-  }
+    "load-grunt-tasks": "^3.5.2",
+    "netlify-lambda": "^1.0.2"
+  },
+  "dependencies": {}
 }

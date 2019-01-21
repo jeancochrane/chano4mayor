@@ -1,0 +1,57 @@
+#!/bin/bash
+
+set -eo pipefail
+
+function usage() {
+    echo -n "Usage: $(basename "$0") {web, functions}
+
+Build the site for distribution.
+
+Options:
+    - web: Build only the website assets (minified JS and CSS) using Grunt.
+    - functions: Build only the lambda functions.
+    - <none>: Build all assets.
+"
+}
+
+function build_web() {
+    docker-compose run --rm --no-deps grunt build
+}
+
+function build_functions() {
+    docker-compose run --rm --no-deps functions build ./src/functions
+}
+
+
+if [ "${BASH_SOURCE[0]}" = "${0}" ]
+then
+    if [ -z "$1" ]
+    then
+        # Run all builds.
+        build_web
+        build_functions
+    else
+        case "$1" in
+
+            -h|--help)
+                usage
+                exit 0
+                ;;
+
+            web)
+                build_web
+                ;;
+
+            functions)
+                build_functions
+                ;;
+
+            *)
+                echo "ERROR: Argument '"$1"' not found."
+                echo
+                usage
+                exit 1
+                ;;
+        esac
+    fi
+fi

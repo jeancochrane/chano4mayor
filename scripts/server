@@ -1,0 +1,80 @@
+#!/bin/bash
+
+set -eo pipefail
+
+function usage() {
+    echo -n "Usage: $(basename "$0") {functions, grunt, nginx} [CMD]
+
+Starts servers using docker-compose. If an argument is specified, [CMD]
+will pass the command string into the corresponding service.
+
+Argument options:
+    - functions: Starts the AWS Lambda dev server on port 9000.
+    - grunt: Starts the Grunt watch task.
+    - nginx: Starts the Nginx dev server on port 1234.
+    - <none>: Start all services.
+"
+}
+
+function run_functions_service() {
+    docker-compose run --rm --service-ports functions "$@"
+}
+
+function run_grunt_service() {
+    docker-compose run --rm grunt "$@"
+}
+
+function run_nginx_service() {
+    docker-compose run --rm --service-ports nginx "$@"
+}
+
+function run_all_services() {
+    run_nginx_service
+}
+
+if [ "${BASH_SOURCE[0]}" = "${0}" ]
+then
+    if [ -z "$1" ]
+    then
+        # If no arguments are supplied, start all services.
+        function runserver() {
+            run_all_services
+        }
+    else
+        case "$1" in
+            -h|--help)
+                usage
+                exit 0
+                ;;
+
+            functions)
+                shift 1
+                function runserver() {
+                    run_functions_service "$@"
+                }
+                ;;
+
+            grunt)
+                shift 1
+                function runserver() {
+                    run_grunt_service "$@"
+                }
+                ;;
+
+            nginx)
+                shift 1
+                function runserver() {
+                    run_nginx_service "$@"
+                }
+                ;;
+
+            *)
+                echo "ERROR: Container type '"$1"' not found."
+                echo
+                usage
+                exit 1
+                ;;
+        esac
+    fi
+    runserver "$@"
+fi
