@@ -1,2 +1,14 @@
 [build]
   functions = "./functions"
+
+[[redirects]]
+  from = "https://chanoformayor.com/*"
+  to = "https://chano4mayor.com/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://laughing-meninsky-b1c0c6.netlify.com/*"
+  to = "https://chano4mayor.com/:splat"
+  status = 301
+  force = true
