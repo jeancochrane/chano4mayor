@@ -308,6 +308,8 @@ footer {
 
 .modal {
   color: black; }
+  .modal .close-modal {
+    border: none; }
   .modal blockquote {
     color: #707070; }
 
